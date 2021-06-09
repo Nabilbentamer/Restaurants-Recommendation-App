@@ -62,12 +62,14 @@ public class DisplayRestaurants extends AppCompatActivity {
 
         // The adapater
 
-        recyclerView = findViewById(R.id.TeacherListRV);
+        /*
 
-        TeacherList = new ArrayList<>();
-        myAdapter = new TeacherListAdapter(this,TeacherList);
+        recyclerView = findViewById(R.id.RestauListRV);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("Teachers");
+        RestauList = new ArrayList<>();
+        myAdapter = new RestaurantsListAdapter(this,RestauList);
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("Restaurants");
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -78,8 +80,8 @@ public class DisplayRestaurants extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot!=null){
                     for( DataSnapshot dataSnapshot1: dataSnapshot.getChildren()){
-                        Teacher teacher = dataSnapshot1.getValue(Teacher.class);
-                        TeacherList.add(teacher);
+                        Restaurants restau = dataSnapshot1.getValue(Restaurants.class);
+                        RestauList.add(restau);
 
                     }
 
@@ -88,7 +90,7 @@ public class DisplayRestaurants extends AppCompatActivity {
 
 
                 myAdapter.notifyDataSetChanged();
-                myAdapter = new TeacherListAdapter(professeurList.this,TeacherList);
+                myAdapter = new RestaurantsListAdapter(DisplayRestaurants.this,RestauList);
                 recyclerView.setAdapter(myAdapter);
             }
 
@@ -99,7 +101,7 @@ public class DisplayRestaurants extends AppCompatActivity {
 
             }
         });
-
+*/
 
 
     }
