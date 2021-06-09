@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EBE5D4"
+    tools:context=".AfterLogin"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Where you Want \nTo eat?"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            android:lineHeight="80dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="20dp"
+
+            >
+
+        </TextView>
+
+        <ImageView
+            android:layout_width="330dp"
+            android:layout_height="250dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="85dp"
+            android:layout_marginEnd="-150dp"
+            android:src="@drawable/food_plate_view">
+
+        </ImageView>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
+
+
+        >
+        <EditText
+            android:padding="10dp"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:hint="Choose your location"
+
+            >
+
+        </EditText>
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/search_icon"
+            android:background="@color/white"
+            >
+
+        </ImageView>
+        
+
+    </LinearLayout>
+    
+    <ImageView
+        android:layout_width="242dp"
+        android:layout_height="186dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/food_plate_top_2"
+        android:layout_marginLeft="-65dp"
+        >
+
+    </ImageView>
+
+
+
+</LinearLayout>
