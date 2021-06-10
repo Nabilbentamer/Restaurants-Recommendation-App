@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Restaurants implements Serializable {
 
-    String name, price,description,image,good_for,ratings;
+    String name, price,description,image,good_for,ratings,category,cuisine;
 
     public void setName(String name) {
         this.name = name;
@@ -48,6 +48,22 @@ public class Restaurants implements Serializable {
 
     public String getRatings() {
         return ratings;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getCuisine() {
+        return cuisine;
+    }
+
+    public void setCuisine(String cuisine) {
+        this.cuisine = cuisine;
     }
 
     public void setRatings(String ratings) {

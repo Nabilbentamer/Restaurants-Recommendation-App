@@ -15,6 +15,7 @@
         <activity android:name=".AfterLogin" />
         <activity android:name=".SignUp" />
         <activity android:name=".RestaurantDetails" />
+        <activity android:name=".FiltersActivity" android:noHistory="true"/>
         <activity android:name=".DisplayFavouriteRestaurants" />
         <activity android:name=".Login">
 

@@ -1,0 +1,188 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:id="@+id/act_filterns_price_container_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="Select Price"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:id="@+id/price_type_rbg">
+
+            <RadioButton
+                android:id="@+id/radio_expensive_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:text="Expensive"
+                android:layout_gravity="center_horizontal"
+                android:checked="false"
+                android:textSize="18dp" />
+
+            <RadioButton
+                android:id="@+id/radio_mid_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:text="Mid"
+                android:layout_gravity="center_horizontal"
+                android:checked="false"
+                android:textSize="18dp" />
+
+            <RadioButton
+                android:id="@+id/radio_cheap_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cheap"
+                android:layout_gravity="center_horizontal"
+                android:checked="false"
+                android:textSize="18dp"
+                android:layout_weight="0.13" />
+        </RadioGroup>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/act_filters_categpry_container_rl"
+        android:layout_below="@+id/act_filterns_price_container_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="Select Category"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:id="@+id/category_type_rbg">
+
+            <RadioButton
+                android:id="@+id/radio_tacos_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:text="Tacos"
+                android:layout_gravity="center_horizontal"
+                android:checked="false"
+                android:textSize="18dp" />
+
+            <RadioButton
+                android:id="@+id/radio_cafe_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:text="Cafe"
+                android:layout_gravity="center_horizontal"
+                android:checked="false"
+                android:textSize="18dp" />
+
+            <RadioButton
+                android:id="@+id/radio_fast_food_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fast_food"
+                android:layout_gravity="center_horizontal"
+                android:checked="false"
+                android:textSize="18dp"
+                android:layout_weight="0.13" />
+        </RadioGroup>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/act_filters_good_for_container_rl"
+        android:layout_below="@+id/act_filters_categpry_container_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="Select Good For"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:id="@+id/good_for_type_rbg">
+
+            <RadioButton
+                android:id="@+id/radio_kids_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:text="Kids"
+                android:layout_gravity="center_horizontal"
+                android:checked="false"
+                android:textSize="18dp" />
+
+            <RadioButton
+                android:id="@+id/radio_family_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:text="buisiness_meeting"
+                android:layout_gravity="center_horizontal"
+                android:checked="false"
+                android:textSize="18dp" />
+
+            <RadioButton
+                android:id="@+id/radio_family_food_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="family"
+                android:layout_gravity="center_horizontal"
+                android:checked="false"
+                android:textSize="18dp"
+                android:layout_weight="0.13" />
+        </RadioGroup>
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+    <Button
+        android:id="@+id/act_filterns_apply_filter_btn"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:textColor="@color/white"
+        android:text="Apply Filters"
+        android:layout_alignParentBottom="true"
+        />
+</RelativeLayout>

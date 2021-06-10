@@ -31,6 +31,8 @@ public class RestaurantsListAdapter extends RecyclerView.Adapter<RestaurantsList
     private ItemClickListener mClickListener;
 
 
+
+
     public RestaurantsListAdapter(Context context, List<Restaurants> RestauList) {
         this.context = context;
         this.RestauList = RestauList;

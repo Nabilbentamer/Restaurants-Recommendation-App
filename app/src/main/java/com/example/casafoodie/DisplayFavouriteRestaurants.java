@@ -53,8 +53,6 @@ public class DisplayFavouriteRestaurants extends AppCompatActivity implements Re
                         RestauList.add(restau);
 
                     }
-
-
                 }
 
 
