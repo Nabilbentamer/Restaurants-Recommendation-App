@@ -1,0 +1,93 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/act_res_top_container_rl"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <ImageView
+            android:id="@+id/act_res_restaurant_iv"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/food_plate_top_2"
+            android:scaleType="centerCrop"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/act_res_add_to_fav_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/teal_200"
+            android:clickable="true"
+            android:src="@drawable/ic_favourite"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="10dp"
+            />
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/act_res_restaurant_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Restaurant Name"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/act_res_top_container_rl"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:layout_marginTop="20dp"
+        />
+
+
+    <RelativeLayout
+        android:id="@+id/act_res_restaurant_price_rate_rl"
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/act_res_top_container_rl"
+        android:layout_height="wrap_content">
+
+        <RatingBar
+            android:id="@+id/simpleRatingBar"
+            style="@style/customRatingBar"
+            android:layout_width="wrap_content"
+
+            android:progressBackgroundTint="@color/yellow"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/act_res_restaurant_price_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price: 200"
+            android:layout_alignParentLeft="true"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginTop="20dp"
+            />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/act_res_restaurant_des_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Restaurant Detial"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/act_res_restaurant_price_rate_rl"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginTop="20dp"
+        />
+
+
+
+
+
+</RelativeLayout>

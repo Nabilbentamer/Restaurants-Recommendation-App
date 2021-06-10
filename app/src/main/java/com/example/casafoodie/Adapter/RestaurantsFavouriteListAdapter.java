@@ -6,32 +6,24 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import android.content.Context;
-import android.media.Image;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
+
 import com.bumptech.glide.Glide;
-import java.util.List;
 import com.example.casafoodie.Model.Restaurants;
 import com.example.casafoodie.R;
 
 import java.util.List;
 
-public class RestaurantsListAdapter extends RecyclerView.Adapter<RestaurantsListAdapter.RestaurantsListViewHolder> {
+public class RestaurantsFavouriteListAdapter extends RecyclerView.Adapter<RestaurantsFavouriteListAdapter.RestaurantsListViewHolder> {
 
     private Context context;
     private List<Restaurants> RestauList;
-    private ItemClickListener mClickListener;
+    private RestaurantsFavouriteListAdapter.ItemClickListener mClickListener;
 
 
-    public RestaurantsListAdapter(Context context, List<Restaurants> RestauList) {
+    public RestaurantsFavouriteListAdapter(Context context, List<Restaurants> RestauList) {
         this.context = context;
         this.RestauList = RestauList;
 
@@ -41,7 +33,7 @@ public class RestaurantsListAdapter extends RecyclerView.Adapter<RestaurantsList
 
     @NonNull
     @Override
-    public RestaurantsListAdapter.RestaurantsListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RestaurantsFavouriteListAdapter.RestaurantsListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         View ItemView = layoutInflater.inflate(R.layout.restaurant_item,parent,false);
         RestaurantsListViewHolder restaurantsListViewHolder = new RestaurantsListViewHolder(ItemView);
@@ -50,7 +42,7 @@ public class RestaurantsListAdapter extends RecyclerView.Adapter<RestaurantsList
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RestaurantsListAdapter.RestaurantsListViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RestaurantsListViewHolder holder, int position) {
 
         Restaurants restaurants = RestauList.get(position);
 
@@ -89,7 +81,7 @@ public class RestaurantsListAdapter extends RecyclerView.Adapter<RestaurantsList
     }
 
 
-    public void setClickListener(ItemClickListener itemClickListener) {
+    public void setClickListener(RestaurantsFavouriteListAdapter.ItemClickListener itemClickListener) {
         this.mClickListener = itemClickListener;
     }
 

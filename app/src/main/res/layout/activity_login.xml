@@ -38,10 +38,11 @@
         </TextView>
 
         <EditText
+            android:id="@+id/login_act_email_edt"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginTop="15dp"
-            android:hint="Phone number"
+            android:hint="Email"
             android:background="@color/white"
             app:cornerRadius="25dp"
             android:padding="5dp"
@@ -51,6 +52,7 @@
         </EditText>
 
         <EditText
+            android:id="@+id/login_act_pass_edt"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginTop="15dp"
@@ -65,6 +67,7 @@
         </EditText>
 
         <Button
+            android:id="@+id/login_act_valid_btn"
             android:layout_width="135dp"
             android:layout_height="wrap_content"
             app:cornerRadius="15dp"

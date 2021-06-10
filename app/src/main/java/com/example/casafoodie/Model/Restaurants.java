@@ -1,8 +1,10 @@
 package com.example.casafoodie.Model;
 
-public class Restaurants {
+import java.io.Serializable;
 
-    String name, price,description,image,good_for;
+public class Restaurants implements Serializable {
+
+    String name, price,description,image,good_for,ratings;
 
     public void setName(String name) {
         this.name = name;
@@ -42,6 +44,14 @@ public class Restaurants {
 
     public String getGood_for() {
         return good_for;
+    }
+
+    public String getRatings() {
+        return ratings;
+    }
+
+    public void setRatings(String ratings) {
+        this.ratings = ratings;
     }
 
     public Restaurants(String name, String price, String description, String image, String good_for) {
