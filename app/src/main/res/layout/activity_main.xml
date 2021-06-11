@@ -64,6 +64,7 @@
         </Button>
 
         <Button
+            android:id="@+id/main_act_signup_btn"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/white"

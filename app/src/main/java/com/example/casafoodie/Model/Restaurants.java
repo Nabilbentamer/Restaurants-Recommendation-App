@@ -4,7 +4,16 @@ import java.io.Serializable;
 
 public class Restaurants implements Serializable {
 
-    String name, price,description,image,good_for,ratings,category,cuisine;
+    String restaurantID,name, price,description,image,good_for,ratings,category,cuisine;
+
+
+    public String getRestaurantID() {
+        return restaurantID;
+    }
+
+    public void setRestaurantID(String restaurantID) {
+        this.restaurantID = restaurantID;
+    }
 
     public void setName(String name) {
         this.name = name;

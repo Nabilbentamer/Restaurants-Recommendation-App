@@ -13,8 +13,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
-        android:layout_centerHorizontal="true"
-        >
+        android:layout_centerHorizontal="true">
 
         <ImageView
             android:layout_width="240dp"
@@ -38,6 +37,18 @@
         </TextView>
 
         <EditText
+            android:id="@+id/act_signup_email_edt"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:hint="Email"
+            android:background="@color/white"
+            app:cornerRadius="25dp"
+            android:padding="5dp"
+
+            />
+        <EditText
+            android:id="@+id/act_signup_username_edt"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginTop="15dp"
@@ -46,11 +57,12 @@
             app:cornerRadius="25dp"
             android:padding="5dp"
 
-            >
+            />
 
-        </EditText>
+
 
         <EditText
+            android:id="@+id/act_signup_phone_edt"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginTop="15dp"
@@ -64,6 +76,7 @@
         </EditText>
 
         <EditText
+            android:id="@+id/act_signup_password_edt"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginTop="15dp"
@@ -78,6 +91,7 @@
         </EditText>
 
         <Button
+            android:id="@+id/act_signup_btn"
             android:layout_width="135dp"
             android:layout_height="wrap_content"
             app:cornerRadius="15dp"

@@ -55,9 +55,14 @@ public class FiltersActivity extends AppCompatActivity {
 
 
 
-            priceType = price_radio.getText().toString();
-            categoryType = category_radio.getText().toString();
-            good_for = good_for_radio.getText().toString();
+            if(price_radio!=null)
+                priceType = price_radio.getText().toString();
+
+            if(category_radio!=null)
+                categoryType = category_radio.getText().toString();
+
+            if(good_for_radio!=null)
+                good_for = good_for_radio.getText().toString();
 
 
             Intent intent = new Intent(FiltersActivity.this,DisplayRestaurants.class);

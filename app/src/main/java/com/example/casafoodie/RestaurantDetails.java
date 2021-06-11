@@ -37,12 +37,15 @@ public class RestaurantDetails extends AppCompatActivity {
         Intent intent = getIntent();
         Restaurants restaurants = (Restaurants) intent.getSerializableExtra("restaurants");
 
+        String[] restName = restaurants.getName().split(" ");
+
 
         act_res_add_to_fav_fab = findViewById(R.id.act_res_add_to_fav_fab);
         act_res_add_to_fav_fab.setOnClickListener(View->{
             databaseReference = FirebaseDatabase.getInstance().getReference("Favorite_restaurants");
 
-            databaseReference.child(Login.user.getPhone_number()).child(getRandomeID()+"").setValue(restaurants).addOnCompleteListener(new OnCompleteListener<Void>() {
+            databaseReference.child(Login.user.getUsername()).child(Login.user.getUsername()+"_"+restName[0])
+                    .setValue(restaurants).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if(task.isSuccessful()){
@@ -77,11 +80,4 @@ public class RestaurantDetails extends AppCompatActivity {
         act_res_restaurant_des_tv.setText(restaurants.getDescription());
     }
 
-    public static long getRandomeID(){
-        Date date = new Date();
-        //This method returns the time in millis
-        long timeMilli = date.getTime();
-        System.out.println("Time in milliseconds using Date class: " + timeMilli);
-        return timeMilli;
-    }
 }

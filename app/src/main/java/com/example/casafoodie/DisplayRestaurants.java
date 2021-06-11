@@ -29,7 +29,9 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class DisplayRestaurants extends AppCompatActivity implements RestaurantsListAdapter.ItemClickListener{
 
@@ -40,11 +42,12 @@ public class DisplayRestaurants extends AppCompatActivity implements Restaurants
 
     private RecyclerView recyclerView;
     private List<Restaurants> RestauList;
-    private List<Restaurants> priceFilteredResultsList;
-    private List<Restaurants> categoryFilteredResultsList;
-    private List<Restaurants> goodForFilteredResultsList;
+    private ArrayList<Restaurants> priceFilteredResultsList;
+    private ArrayList<Restaurants> categoryFilteredResultsList;
+    private ArrayList<Restaurants> goodForFilteredResultsList;
 
-    private List<Restaurants> finalFilteredResultsList;
+    ArrayList<Restaurants> finalFilteredResultsList = new ArrayList<>();
+    ArrayList<Restaurants> maskFilteredResultsList = new ArrayList<>();
 
     private RestaurantsListAdapter myAdapter;
     private DatabaseReference databaseReference;
@@ -53,30 +56,70 @@ public class DisplayRestaurants extends AppCompatActivity implements Restaurants
 
 
     private void filterList(){
+        finalFilteredResultsList = new ArrayList<>();
 
-        if(!priceType.equals("")){
+        if(!priceType.equals("") && !categoryType.equals("") && !good_for.equals("")){
+
+            for (int i = 0;i<RestauList.size();i++){
+                if(RestauList.get(i).getPrice().equals(priceType.toLowerCase()) &&
+                        RestauList.get(i).getCategory().equals(categoryType.toLowerCase()) &&
+                        RestauList.get(i).getGood_for().equals(good_for.toLowerCase())){
+                    finalFilteredResultsList.add(RestauList.get(i));
+                }
+            }
+        }else if(!priceType.equals("") && !categoryType.equals("")){//1 & 2 == 2 && 1
+            for (int i = 0;i<RestauList.size();i++){
+                if(RestauList.get(i).getPrice().equals(priceType.toLowerCase()) &&
+                        RestauList.get(i).getCategory().equals(categoryType.toLowerCase())){
+
+                    finalFilteredResultsList.add(RestauList.get(i));
+                }
+            }
+        }else if(!priceType.equals("") && !good_for.equals("")){//1 && 3 == 3 %% 1
+            for (int i = 0;i<RestauList.size();i++){
+                if(RestauList.get(i).getPrice().equals(priceType.toLowerCase()) &&
+                        RestauList.get(i).getGood_for().equals(good_for.toLowerCase())){
+
+                    finalFilteredResultsList.add(RestauList.get(i));
+                }
+            }
+        }else if(!categoryType.equals("") && !good_for.equals("")){//2 && 3 == 3 %% 2
+
+            for (int i = 0;i<RestauList.size();i++){
+                if(RestauList.get(i).getCategory().equals(categoryType.toLowerCase()) &&
+                        RestauList.get(i).getGood_for().equals(good_for.toLowerCase())){
+
+                    finalFilteredResultsList.add(RestauList.get(i));
+                }
+            }
+
+        }else if(!priceType.equals("")){// 1
             for (int i = 0;i<RestauList.size();i++){
                 if(RestauList.get(i).getPrice().equals(priceType.toLowerCase())){
-                    priceFilteredResultsList.add(RestauList.get(i));
+
+                    finalFilteredResultsList.add(RestauList.get(i));
                 }
             }
-        }
-
-        if(!categoryType.equals("")){
+        }else if(!categoryType.equals("")){// 2
             for (int i = 0;i<RestauList.size();i++){
                 if(RestauList.get(i).getCategory().equals(categoryType.toLowerCase())){
-                    categoryFilteredResultsList.add(RestauList.get(i));
+
+                    finalFilteredResultsList.add(RestauList.get(i));
+                }
+            }
+        }else if(!good_for.equals("")){// 3
+            for (int i = 0;i<RestauList.size();i++){
+                if(RestauList.get(i).getGood_for().equals(good_for.toLowerCase())){
+
+                    finalFilteredResultsList.add(RestauList.get(i));
                 }
             }
         }
 
-        if(!good_for.equals("")){
-            for (int i = 0;i<RestauList.size();i++){
-                if(RestauList.get(i).getGood_for().equals(good_for.toLowerCase())){
-                    goodForFilteredResultsList.add(RestauList.get(i));
-                }
-            }
-        }
+        myAdapter = new RestaurantsListAdapter(DisplayRestaurants.this,finalFilteredResultsList);
+        myAdapter.setClickListener(DisplayRestaurants.this);
+        recyclerView.setAdapter(myAdapter);
+        myAdapter.notifyDataSetChanged();
 
     }
 
@@ -133,6 +176,10 @@ public class DisplayRestaurants extends AppCompatActivity implements Restaurants
                         startActivity(intent);
                         break;
 
+                    case R.id.nav_recommend:
+                        Intent intTwo = new Intent(DisplayRestaurants.this,RecommendRestaurants.class);
+                        startActivity(intTwo);
+                        break;
                 }
                 return false;
             }
@@ -174,7 +221,16 @@ public class DisplayRestaurants extends AppCompatActivity implements Restaurants
                 myAdapter.notifyDataSetChanged();
 
 
-                if(priceType!=null && categoryType!=null && good_for!=null){
+                if(priceType!=null || categoryType!=null || good_for!=null){
+                    if(priceType==null)
+                        priceType="";
+
+                    if(categoryType==null)
+                        categoryType="";
+
+                    if(good_for==null)
+                        good_for="";
+
                     filterList();
                 }
             }

@@ -10,9 +10,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        >
+        android:layout_height="wrap_content">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -61,19 +59,20 @@
                 app:layout_editor_absoluteY="37dp" />
 
             <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:id="@+id/fav_rest_iv"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="126dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginBottom="40dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/professor_item_name_tv"
+
                 app:layout_constraintTop_toTopOf="parent"
-                android:visibility="gone"
-                android:src="@drawable/add" />
+                android:src="@drawable/ic_delete" />
+
+
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
